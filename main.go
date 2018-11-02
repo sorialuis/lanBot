@@ -13,6 +13,7 @@ func main() {
         c.String(http.StatusOK, "pong")
     })
 
-    router.Run(":8080")
+    router.Run()
 }
+
 
