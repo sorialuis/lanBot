@@ -1,26 +1,26 @@
 package app
 
 import (
-    "github.com/gin-gonic/gin"
-    "github.com/emikohmann/api-template/controllers/example"
+	"github.com/gin-gonic/gin"
+	"github.com/sorialuis/lanBot/controllers/example"
 )
 
 const (
-    appPort = ":8080"
+	appPort = ":8080"
 
-    endpointExample = "/example"
+	endpointExample = "/example"
 )
 
 var (
-    router = gin.Default()
+	router = gin.Default()
 )
 
 func mapRoutes() {
-    router.GET(
-        endpointExample, example.ExampleController,
-    )
+	router.GET(
+		endpointExample, example.ExampleController,
+	)
 }
 
 func run() {
-    router.Run(appPort)
+	router.Run(appPort)
 }

@@ -18,7 +18,10 @@ package main
 
 import (
 	"fmt"
+	//"strings"
+	"net/http"
 
+	"gitbug.com/gin-gonic/gin"
 	"github.com/bwmarrin/discordgo"
 )
 
@@ -28,6 +31,23 @@ var (
 )
 
 func main() {
+
+	startPing
+	startDiscord()
+}
+
+func startPing() {
+	router := gin.Default()
+
+	router.GET("/ping", func(c *gin.Context) {
+
+		c.String(http.StatusOK, "pong")
+	})
+
+	router.Run()
+}
+
+func startDiscord() {
 	discord, err := discordgo.New("Bot NTEwNDc1NTk5OTI0NDI4ODMw.Dsd0uw.p13kOVtBrfIsi_bOqK3tQq80W58")
 	errCheck("error creating discord session", err)
 	user, err := discord.User("@me")
