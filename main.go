@@ -88,7 +88,7 @@ func commandHandler(discord *discordgo.Session, message *discordgo.MessageCreate
 		return
 	}
 
-	content := message.Content
+	// content := message.Content //esta declarado pero no lo usa
 
 	fmt.Printf("Message: %+v || From: %s\n", message.Message, message.Author)
 }
