@@ -21,8 +21,8 @@ import (
 	//"strings"
 	"net/http"
 
-	"gitbug.com/gin-gonic/gin"
 	"github.com/bwmarrin/discordgo"
+	"github.com/gin-gonic/gin"
 )
 
 var (
@@ -32,7 +32,7 @@ var (
 
 func main() {
 
-	startPing
+	startPing()
 	startDiscord()
 }
 
